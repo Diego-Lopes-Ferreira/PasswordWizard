@@ -7,7 +7,7 @@
     },
     "ph": {
       "name": "Digite seu primeiro nome",
-      "password": "Digite a única senha que você vai precisar gravar"
+      "password": "O único pin que você vai precisar gravar"
     },
     "errors": {
       "textBig": {
@@ -17,9 +17,20 @@
           "msg": "Este nome é muito grande, tente abreviar.\n\nEstamos trabalhando para melhorar sua experiência, mas por enquanto, volte e mude :)",
           "button": "ok?"
         }
+      },
+      "noName": {
+        "title": "Hey",
+        "msg": "Diga o seu nome",
+        "button": "voltar"
+      },
+      "noPassword": {
+        "title": "Hey",
+        "msg": "Crie um pin simples",
+        "button": "voltar"
       }
     }
   },
+
   "en": {
     "texts": {
       "name": "Username",
@@ -38,6 +49,16 @@
           "msg": "This name is too big.\n\nWe're working to give ou the best experience, but, for now, go back and change it :)",
           "button": "ok?"
         }
+      },
+      "noName": {
+        "title": "Hey",
+        "msg": "Tell us your name",
+        "button": "back"
+      },
+      "noPassword": {
+        "title": "Hey",
+        "msg": "Create a simple pin",
+        "button": "back"
       }
     }
   }

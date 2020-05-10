@@ -35,9 +35,9 @@ export default function App() {
     } catch (err) {
       await set_firstUse(initialData.isFirstUse);
       console.log('First use: catch');
-      console.log(firstUse);
-      initialData.isFirstUse = false;
-      await AsyncStorage.setItem(storageKey, JSON.stringify(initialData));
+      //console.log(firstUse);
+      //initialData.isFirstUse = false;
+      //await AsyncStorage.setItem(storageKey, JSON.stringify(initialData));
       set_loading(false);
     }
     console.log(firstUse);

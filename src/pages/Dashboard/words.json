@@ -1,0 +1,12 @@
+{
+  "pt": {
+    "header": {
+      "greeting": "Bem Vindo, "
+    }
+  },
+  "en": {
+    "header": {
+      "greeting": "Welcome, "
+    }
+  }
+}
