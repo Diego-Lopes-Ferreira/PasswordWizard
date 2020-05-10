@@ -1,0 +1,17 @@
+{
+  "isFirstUse": true,
+  "user": {
+    "name": "diego",
+    "password": ""
+  },
+  "passwords": [
+    {
+      "title": "Olá",
+      "description": "Parece que não tem nada por aqui, clique no + e comece a guardar suas senhas",
+      "login": "login",
+      "password": "senha",
+      "email": "email.vinculado@conta",
+      "id": "eeeeeeee"
+    }
+  ]
+}

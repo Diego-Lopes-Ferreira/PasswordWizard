@@ -1,0 +1,44 @@
+{
+  "pt": {
+    "texts": {
+      "name": "Nome",
+      "password": "Senha",
+      "button": "Entrar"
+    },
+    "ph": {
+      "name": "Digite seu primeiro nome",
+      "password": "Digite a única senha que você vai precisar gravar"
+    },
+    "errors": {
+      "textBig": {
+        "text": "Nomes podem conter até 10 caracteres",
+        "alert": {
+          "title": "Ops",
+          "msg": "Este nome é muito grande, tente abreviar.\n\nEstamos trabalhando para melhorar sua experiência, mas por enquanto, volte e mude :)",
+          "button": "ok?"
+        }
+      }
+    }
+  },
+  "en": {
+    "texts": {
+      "name": "Username",
+      "password": "Password",
+      "button": "Enter"
+    },
+    "ph": {
+      "name": "Type your first name",
+      "password": "Type the only pin you'll need to remember"
+    },
+    "errors": {
+      "textBig": {
+        "text": "Names must have less than 10 characters",
+        "alert": {
+          "title": "Ops",
+          "msg": "This name is too big.\n\nWe're working to give ou the best experience, but, for now, go back and change it :)",
+          "button": "ok?"
+        }
+      }
+    }
+  }
+}
