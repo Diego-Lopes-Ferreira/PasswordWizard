@@ -1,0 +1,114 @@
+{
+  "pt": {
+    "header": {
+      "text": "Configurações"
+    },
+    "reset": {
+      "text": "Zerar dados",
+      "alert": {
+        "title": "Atenção",
+        "msg": "Esse processo apagará todos os seus dados, tem certeza que deseja fazer isso?",
+        "buttonY": "Sim",
+        "buttonN": "Não"
+      }
+    },
+    "errors": {
+      "textBig": {
+        "text": "Nomes podem conter até 10 caracteres",
+        "alert": {
+          "title": "Ops",
+          "msg": "Este nome é muito grande, tente abreviar.\n\nEstamos trabalhando para melhorar sua experiência, mas por enquanto, volte e mude :)",
+          "button": "ok?"
+        }
+      },
+      "notSaved": {
+        "text": "Informações não foram salvas",
+        "alert": {
+          "title": "Hey",
+          "msg": "Suas alterações não foram salvas, deseja sair mesmo assim?",
+          "buttonY": "Sim",
+          "buttonN": "Não",
+          "buttonS": "Salvar"
+        }
+      },
+      "saved": {
+        "text": "As informações estão salvas no banco de dados",
+        "alert": {
+          "title": "",
+          "msg": "Seu pin agora é:\n\n",
+          "buttonY": "ok"
+        }
+      },
+      "notName": {
+        "title": "Hey",
+        "msg": "Diga o seu nome",
+        "button": "voltar"
+      },
+      "noPassword": {
+        "title": "Hey",
+        "msg": "Crie um pin simples",
+        "button": "voltar"
+      }
+    },
+    "ph": {
+      "name": "Seu primeiro nome",
+      "password": "O PIN usado para entrar no app"
+    }
+  },
+  "en": {
+    "header": {
+      "text": "Settings"
+    },
+    "reset": {
+      "text": "Reset Data",
+      "alert": {
+        "title": "Atention",
+        "msg": "This action will errase all your data, are you sure you want to do it?",
+        "buttonY": "Yes",
+        "buttonN": "No"
+      }
+    },
+    "errors": {
+      "textBig": {
+        "text": "Names must have less than 10 characters",
+        "alert": {
+          "title": "Ops",
+          "msg": "This name is too big.\n\nWe're working to give ou the best experience, but, for now, go back and change it :)",
+          "button": "ok?"
+        }
+      },
+      "notSaved": {
+        "text": "Info not saved",
+        "alert": {
+          "title": "Hey",
+          "msg": "Your changes are not saved, want to exit anyway?",
+          "buttonY": "Yes",
+          "buttonN": "No",
+          "buttonS": "Save"
+        }
+      },
+      "saved": {
+        "text": "All info is saved on database",
+        "alert": {
+          "title": "",
+          "msg": "Your pin is now:\n\n",
+          "buttonY": "ok"
+        }
+      },
+      "notName": {
+        "title": "Hey",
+        "msg": "Tell us your name",
+        "button": "back"
+      },
+      "noPassword": {
+        "title": "Hey",
+        "msg": "Create a simple pin",
+        "button": "back"
+      }
+    },
+    "ph": {
+      "name": "Your first name",
+      "password": "The PIN you use to enter the app"
+    }
+  }
+}

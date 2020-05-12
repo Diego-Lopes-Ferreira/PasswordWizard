@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import Constants from 'expo-constants'
 
-const bgColor = '#555555';
-const red = '#ff2244';
-const main = '#ffffff';
-const detail = '#aaaaaa';
+export const bgColor = '#555555';
+export const red = '#ff2244';
+export const main = '#ffffff';
+export const detail = '#aaaaaa';
 
 const styles = StyleSheet.create({
   // views
@@ -18,6 +19,33 @@ const styles = StyleSheet.create({
     height: 200,
     padding: 10,
   },
+  header: {
+    width: '100%',
+    padding: 5,
+    paddingTop: Constants.statusBarHeight + 10,
+    paddingBottom: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    //backgroundColor: '#444',
+  },
+  slice: {
+    flexDirection: 'row',
+  },
+  sliceSettingsLang: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 20,
+  },
+  scrollview: {
+    width: '100%',
+    padding: 10,
+  },
+  svSettings: {
+    width: '90%',
+    padding: 10,
+  },
   image: {
     flex: 1, 
     resizeMode: "cover", 
@@ -30,11 +58,46 @@ const styles = StyleSheet.create({
     color: main,
     fontSize: 22,
   },
+  txtWarning: {
+    width: '100%',
+    textAlign: 'left',
+    color: '#ff2244',
+    fontSize: 22,
+  },
+  txtGnormal: {
+    color: main,
+    fontSize: 22,
+  },
+  txtMnormal: {
+    color: main,
+    fontSize: 18,
+  },
+  txtLangPt: {
+    color: '#ff4466',
+    fontSize: 18,
+  },
+  txtLangEn: {
+    color: '#81b0ff',
+    fontSize: 18,
+  },
   txtTitle: {
     width: '100%',
     textAlign: 'center',
     color: main,
     fontSize: 22,
+  },
+  txtHGreeting: {
+    textAlign: 'center',
+    color: main,
+    fontSize: 16,
+  },
+  txtHUsername: {
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    textDecorationLine: 'underline',
+    color: main,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
   txtWrong: {
     width: '100%',
@@ -47,12 +110,15 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     padding: 20,
   },
+  hBtn: {
+    padding: 5,
+  },
   // inputs
   inputFocused: {
     marginVertical: 15,
     paddingHorizontal: 10,
     height: 40,
-    width: '100%',
+    width: '95%',
     color: main,
     backgroundColor: 'transparent',
     borderColor: 'transparent',
