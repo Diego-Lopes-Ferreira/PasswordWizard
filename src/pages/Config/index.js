@@ -37,7 +37,11 @@ export default function Config({ navigation }) {
   async function reset() {
     let w = words.reset.alert;
     Alert.alert(w.title, w.msg, [
-      {text: w.buttonY, onPress: async () => await AsyncStorage.setItem(storageKey, '')},
+      {text: w.buttonY, 
+        onPress: async () => {
+          await AsyncStorage.setItem(storageKey, '')
+          navigation.replace('Register')
+        }},
       {text: w.buttonN},
     ])
   }

@@ -3,27 +3,24 @@ import { View, Text } from 'react-native';
 
 import styles from '../../utils/styles';
 
-export default function Create() {
+export default function Login() {
   const [data, set_data] = useState();
-  const [name, set_name] = useState('');
   async function loadData() {
     let rawData = await read();
     if (rawData !== null ) {
       set_data(rawData);
     }
   }
+  
+  useEffect(() => {loadData();}, [navigation])
 
   useEffect(() => {
-    loadData();
-    if (data !== undefined) {
-      set_name(data.user.name);
-    }
+    
   }, [data])
 
   return (
     <View style={styles.screen} >
-      <Text style={styles.txtG}>Loogin</Text>
-      <Text style={styles.txtWrong}>{name}</Text>
+      <Text style={styles.txtG}>Login</Text>
     </View>
   );
 }

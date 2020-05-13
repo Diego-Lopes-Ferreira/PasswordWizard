@@ -32,6 +32,15 @@ const styles = StyleSheet.create({
   slice: {
     flexDirection: 'row',
   },
+  sliceWPadd: {
+    flexDirection: 'row',
+    paddingVertical: 2.5,
+  },
+  sliceOutside: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   sliceSettingsLang: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -45,6 +54,13 @@ const styles = StyleSheet.create({
   svSettings: {
     width: '90%',
     padding: 10,
+  },
+  container: {
+    width: '100%',
+    borderRadius: 20,
+    backgroundColor: '#000000',
+    padding: 10,
+    marginBottom: 10,
   },
   image: {
     flex: 1, 
@@ -71,6 +87,10 @@ const styles = StyleSheet.create({
   txtMnormal: {
     color: main,
     fontSize: 18,
+  },
+  txtPgrey: {
+    color: '#aaaaaa',
+    fontSize: 14,
   },
   txtLangPt: {
     color: '#ff4466',

@@ -2,11 +2,28 @@
   "pt": {
     "header": {
       "greeting": "Bem Vindo, "
+    },
+    "refresh": "Atualizar",
+    "delItem": {
+      "title": "Hey",
+      "msg": "Tem certeza que quer deletar?\n\nNão tem como recuperar essa informação depois",
+      "buttonY": "Sim",
+      "buttonN": "Não"
     }
+
   },
   "en": {
     "header": {
       "greeting": "Welcome, "
+    },
+    "refresh": "Refresh",
+    "delItem": {
+      "title": "Hey",
+      "msg": "Are you sure you want to delete it?\n\nThere is no way to restore this information",
+      "buttonY": "Yes",
+      "buttonN": "No"
     }
+
+
   }
 }
