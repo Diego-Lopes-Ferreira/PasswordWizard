@@ -45,7 +45,7 @@ export default function App() {
   } else {
     return (
       <NavigationContainer >
-        <Stack.Navigator initialRouteName={firstUse ? 'Register' : 'Dashboard'} headerMode='none' >
+        <Stack.Navigator initialRouteName={firstUse ? 'Register' : 'Login'} headerMode='none' >
           <Stack.Screen name='Register' component={Register} />
           <Stack.Screen name='Dashboard' component={Dashboard} />
           <Stack.Screen name='Login' component={Login} />

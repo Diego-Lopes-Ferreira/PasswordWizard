@@ -1,0 +1,24 @@
+{
+  "pt": {
+    "title": "Portugues",
+    "submit": "Entrar",
+    "error": {
+      "alert": {
+        "title": "Ops",
+        "msg": "Senha incorreta",
+        "button": "ok"
+      }
+    }
+  },
+  "en": {
+    "title": "Ingles",
+    "submit": "Enter",
+    "error": {
+      "alert": {
+        "title": "Ops",
+        "msg": "Wrong password",
+        "button": "ok"
+      }
+    }
+  }
+}
