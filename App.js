@@ -17,11 +17,13 @@ import Config from './src/pages/Config';
 // Aplication
 import { read } from './src/utils/api';
 import initialData from './src/utils/initialData.json';
+import { StatusBar } from 'react-native';
 
 const Stack = createStackNavigator();
 
 
 export default function App() {
+  StatusBar.setBarStyle('light-content')
   const [firstUse, set_firstUse] = useState();
   const [loading, set_loading] = useState(true);
   

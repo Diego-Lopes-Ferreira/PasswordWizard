@@ -28,12 +28,12 @@ yarn init
 
 ## Release History
 * 0.1.0
-    * First workin model (~16/05/2020)
+    * First working model (~24/05/2020)
 
 ## Meta
 
 Diego Lopes Ferreira – [@Twitter](https://twitter.com/Diego_simSouEu) – [@Instagram](https://www.instagram.com/diego.lopes.f/)
-Distributed under the MIT license. See [License.md](LICENSE.md) for more information.
+Distributed under the MIT license. See [License](LICENSE) for more information.
 
 [github.com/Diego-Lopes-Ferreira](https://github.com/Diego-Lopes-Ferreira/)
 

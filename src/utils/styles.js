@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
 import Constants from 'expo-constants'
 
-export const bgColor = '#555555';
+export const bgColor = '#040404';
 export const red = '#ff2244';
-export const main = '#ffffff';
+export const main = '#dbdad5';
 export const detail = '#aaaaaa';
 
 const styles = StyleSheet.create({
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     borderRadius: 20,
-    backgroundColor: '#000000',
+    backgroundColor: '#565656',
     padding: 10,
     marginBottom: 10,
   },

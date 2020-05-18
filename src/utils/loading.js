@@ -27,7 +27,7 @@ export default function Loading({ isLoading }) {
   }, [isLoading])
   
   return (
-    <View style={[styles.screen, loading ? {display: 'flex', position: 'absolute'}:{display: 'none'}]}>
+    <View style={[{flex: 1, justifyContent: 'center', alignItems: 'center',}, loading ? {display: 'flex', position: 'absolute'}:{display: 'none'}]}>
       <Animated.View style={loadingStyle}>
         <Feather name='loader' size={40} color='#ffffff'/>
       </Animated.View>

@@ -134,7 +134,7 @@ function Header({ text, goBack, saveConfig }) {
     <View style={styles.header} >
       <View style={styles.slice}>
         <TouchableOpacity style={styles.hBtn} onPress={goBack}>
-          <Feather name='arrow-left' size={26} color={'#ffffff'} />
+          <Feather name='arrow-left' size={26} color={'#dbdad5'} />
         </TouchableOpacity>
       </View>
       
@@ -144,7 +144,7 @@ function Header({ text, goBack, saveConfig }) {
       
       <View style={styles.slice}>
         <TouchableOpacity style={styles.hBtn} onPress={saveConfig}>
-          <Feather name='check' size={26} color={'#ffffff'} />
+          <Feather name='check' size={26} color={'#dbdad5'} />
         </TouchableOpacity>
       </View>
     </View>
@@ -155,7 +155,7 @@ function ConfigurationInput({ type, ph, value, setVal }) {
   const [focused, set_focused] = useState(false);
   return (
     <View style={styles.sliceSettingsLang}>
-      <Feather name={type} size={32} color={'#ffffff'} />
+      <Feather name={type} size={32} color={'#dbdad5'} />
       <View style={{width: '90%'}}>
         <TextInput
           style={focused ? styles.inputFocused : styles.inputBlured}
@@ -190,7 +190,7 @@ function LangSwitch({ change, lang }) {
       <Text style={styles.txtLangPt}>Portuguese</Text>
       <Switch
         trackColor={{ false: "#ff4466", true: "#81b0ff" }}
-        thumbColor={isEnabled ? "#ffffff" : "#ffffff"}
+        thumbColor={isEnabled ? "#dbdad5" : "#dbdad5"}
         ios_backgroundColor="#3e3e3e"
         onValueChange={toggleSwitch}
         value={isEnabled}

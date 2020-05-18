@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, AsyncStorage, ScrollView, Animated, FlatList, Alert } from 'react-native';
+import { View, Text, TouchableOpacity, AsyncStorage, Animated, FlatList, Alert } from 'react-native';
 import { Feather } from '@expo/vector-icons'
 
 import styles from '../../utils/styles';
@@ -8,7 +8,7 @@ import { read, delelteById, storageKey } from '../../utils/api';
 import { en, pt } from './words.json';
 
 
-export default function Login({ navigation }) {
+export default function Dashboard({ navigation }) {
   const [words, set_lang] =  useState(pt);
   const [loading, set_loading] = useState(true);
   const [data, set_data] = useState();
@@ -92,7 +92,7 @@ function Header({ username, greeting, locked, saveAndExit, gotoConfig, gotoCreat
     <View style={styles.header} >
       <View style={styles.slice}>
         <TouchableOpacity style={styles.hBtn} onPress={saveAndExit}>
-          <Feather name={locked ? 'lock' : 'unlock'} size={26} color={'#ffffff'} />
+          <Feather name={locked ? 'lock' : 'unlock'} size={26} color={'#dbdad5'} />
         </TouchableOpacity>
       </View>
       
@@ -103,10 +103,10 @@ function Header({ username, greeting, locked, saveAndExit, gotoConfig, gotoCreat
       
       <View style={styles.slice}>
         <TouchableOpacity style={styles.hBtn} onPress={gotoCreate}>
-          <Feather name='plus' size={26} color={'#ffffff'} />
+          <Feather name='plus' size={26} color={'#dbdad5'} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.hBtn} onPress={gotoConfig}>
-          <Feather name='settings' size={26} color={'#ffffff'} />
+          <Feather name='settings' size={26} color={'#dbdad5'} />
         </TouchableOpacity>
       </View>
     </View>
@@ -144,10 +144,10 @@ function Container({ pwd, delItem, gotoEdit }) {
             <Feather name='trash-2' size={26} color='#ff4466' />
           </TouchableOpacity>
           <TouchableOpacity style={styles.hBtn} onPress={edit}>
-            <Feather name='edit' size={26} color='#ffffff' />
+            <Feather name='edit' size={26} color='#dbdad5' />
           </TouchableOpacity>
           <TouchableOpacity style={[styles.hBtn, rotateStyle]} onPress={openClose}>
-            <Feather name='chevron-down' size={26} color='#ffffff' />
+            <Feather name='chevron-down' size={26} color='#dbdad5' />
           </TouchableOpacity>
         </View>
       </View>
@@ -173,38 +173,45 @@ function Container({ pwd, delItem, gotoEdit }) {
     return (
       <Animated.View style={isOpen ? {display: 'flex', opacity: opacityOut} : {display: 'none'}}>
         <View style={styles.sliceWPadd}>
-          <Feather name='user' size={26} color='#ffffff' />
+          <Feather name='user' size={26} color='#dbdad5' />
           <Text style={[styles.txtMnormal, {paddingHorizontal: 10, maxWidth: 250}]}>{login}</Text>
         </View>
         <View style={styles.sliceWPadd}>
-          <Feather name='key' size={26} color='#ffffff' />
+          <Feather name='key' size={26} color='#dbdad5' />
           <Text style={[styles.txtMnormal, {paddingHorizontal: 10, maxWidth: 250}]}>{password}</Text>
         </View>
         <View style={styles.sliceWPadd}>
-          <Feather name='mail' size={26} color='#ffffff' />
+          <Feather name='mail' size={26} color='#dbdad5' />
           <Text style={[styles.txtMnormal, {paddingHorizontal: 10, maxWidth: 250}]}>{email}</Text>
         </View>
       </Animated.View>
     );
   }
+  /* colors={['#0f021b', '#fc1e27']}
+  start={{x: 0, y: 1}}
+  end={{x: 1, y: 0}}
+  style={styles.container} */
   return (
-    <View style={styles.container}>
+    <View
+      style={styles.container}
+    >
+
       <TopBar
         title={pwd.title}
         isOpen={opened}
         openClose={() => set_opened(!opened)}
         edit={gotoEdit}
         delItem={delItem}
-      />
+        />
       <Description
         desc={pwd.description}
-      />
+        />
       <ShowHide
         isOpen={opened}
         login={pwd.login}
         password={pwd.password}
         email={pwd.email}
-      />
+        />
     </View>
   );
 }
