@@ -35,6 +35,8 @@ const styles = StyleSheet.create({
   sliceWPadd: {
     flexDirection: 'row',
     paddingVertical: 2.5,
+    //justifyContent: 'center',
+    //alignItems: 'center',
   },
   sliceOutside: {
     flexDirection: 'row',
@@ -148,6 +150,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   inputBlured: {
+    marginVertical: 15,
+    paddingHorizontal: 10,
     paddingHorizontal: 10,
     height: 40,
     width: '90%',

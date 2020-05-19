@@ -1,164 +1,164 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { Feather } from '@expo/vector-icons'
-import styles from '../../utils/styles';
+import React, { useState, useEffect } from "react";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  TextInput,
+  ScrollView,
+  Alert,
+} from "react-native";
+import { Feather } from "@expo/vector-icons";
+import styles from "../../utils/styles";
+import { pt, en } from "./words.json";
+import { create, read } from "../../utils/api";
 
-export default function Create() {
-  async function createPwd() {}
-  async function go_back() {}
+export default function Create({ navigation }) {
+  const [words, set_lang] = useState(pt);
+  const [title, set_title] = useState("");
+  const [description, set_description] = useState("");
+  const [login, set_login] = useState("");
+  const [password, set_password] = useState("");
+  const [email, set_email] = useState("");
+
+  async function createPwd() {
+    let data = {
+      title: title,
+      description: description,
+      login: login,
+      password: password,
+      email: email,
+    };
+    console.log(data);
+    await create(data);
+    navigation.goBack();
+  }
+  async function go_back() {
+    let w = words.errors.notSaved;
+    Alert.alert(w.title, w.msg, [
+      {
+        text: w.buttonY,
+        onPress: createPwd,
+      },
+      {
+        text: w.buttonAny,
+        onPress: () => navigation.goBack(),
+      },
+    ]);
+  }
+  useEffect(() => {
+    async function sla() {
+      let data = await read();
+      set_lang(data.user.lang === "pt" ? pt : en);
+    }
+    sla();
+  }, []);
+  useEffect(() => {}, [words]);
   return (
-    <View style={styles.screen} >
-      <Header
-        pwd={{title: 'Create'}}
-        create={createPwd}
-        go_back={go_back}
-      />
-      <Body />
-      <Text style={styles.txtG}>Create</Text>
+    <View style={styles.screen}>
+      <Header pwd={words.title} create={createPwd} go_back={go_back} />
+      <View
+        style={[
+          styles.container,
+          {
+            paddingBottom: 20,
+          },
+        ]}
+      >
+        <ScrollView>
+          <BodyInput
+            type="bookmark"
+            val={title}
+            setVal={set_title}
+            ph={words.ph.title}
+          />
+          <BodyInput
+            type="file-text"
+            val={description}
+            setVal={set_description}
+            ph={words.ph.description}
+          />
+          <BodyInput
+            type="user"
+            val={login}
+            setVal={set_login}
+            ph={words.ph.login}
+            isemail={true}
+          />
+          <BodyInput
+            type="key"
+            val={password}
+            setVal={set_password}
+            ph={words.ph.password}
+            ispwd={true}
+          />
+          <BodyInput
+            type="mail"
+            val={email}
+            setVal={set_email}
+            ph={words.ph.email}
+            isemail={true}
+          />
+        </ScrollView>
+      </View>
+      <View
+        style={{
+          flex: 1,
+        }}
+      ></View>
     </View>
   );
 }
 
 function Header({ pwd, create, go_back }) {
   return (
-    <View style={styles.header} >
+    <View style={styles.header}>
       <View style={styles.slice}>
         <TouchableOpacity style={styles.hBtn} onPress={go_back}>
-          <Feather name={'arrow-left'} size={26} color={'#dbdad5'} />
+          <Feather name={"arrow-left"} size={26} color={"#dbdad5"} />
         </TouchableOpacity>
       </View>
-      
       <View style={styles.slice}>
-        <Text style={styles.txtHGreeting}>{pwd.title}</Text>
+        <Text style={styles.txtHGreeting}> {pwd} </Text>
       </View>
-      
       <View style={styles.slice}>
         <TouchableOpacity style={styles.hBtn} onPress={create}>
-          <Feather name='plus' size={26} color={'#dbdad5'} />
+          <Feather name="plus" size={26} color={"#dbdad5"} />
         </TouchableOpacity>
       </View>
     </View>
   );
 }
 
-
-function Body({ pwd }) {
+function BodyInput({ setVal, isemail, ispwd, type, ph }) {
+  const [isFocused, set_focus] = useState(false);
+  const [newValue, set_newValue] = useState("");
   return (
-    <View>
-      <View style={styles.sliceWPadd}>
-        <Feather name='user' size={26} color='#dbdad5' />
-        <Text style={[styles.txtMnormal, {paddingHorizontal: 10, maxWidth: 250}]}>login</Text>
-      </View>
-      <View style={styles.sliceWPadd}>
-        <Feather name='key' size={26} color='#dbdad5' />
-        <Text style={[styles.txtMnormal, {paddingHorizontal: 10, maxWidth: 250}]}>password</Text>
-      </View>
-      <View style={styles.sliceWPadd}>
-        <Feather name='mail' size={26} color='#dbdad5' />
-        <Text style={[styles.txtMnormal, {paddingHorizontal: 10, maxWidth: 250}]}>email</Text>
-      </View>
-    </View>
-  );
-}
-
-function Container({ pwd, delItem, gotoEdit }) {
-  
-  const [opened, set_opened] = useState(false);
-
-  function TopBar({ title, isOpen, openClose, edit, delItem }) {
-
-    const input = new Animated.Value(isOpen ? 0 : 1);
-
-    useEffect(() => {
-      Animated.timing(input, {
-        toValue: isOpen ? 1 : 0,
-        duration: 300,
-        useNativeDriver: true,
-      }).start()
-    }, [isOpen])
-
-    const output = input.interpolate({
-      inputRange: [0, 1],
-      outputRange: ['0deg', '180deg'],
-    })
-
-    const rotateStyle = {transform: [{rotate: output}]}
-
-    return (
-      <View style={styles.sliceOutside}>
-        <Text style={[styles.txtMnormal, {maxWidth: 200}]}>{title}</Text>
-        <View style={styles.slice}>
-          <TouchableOpacity style={styles.hBtn} onPress={delItem}>
-            <Feather name='trash-2' size={26} color='#ff4466' />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.hBtn} onPress={edit}>
-            <Feather name='edit' size={26} color='#dbdad5' />
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.hBtn, rotateStyle]} onPress={openClose}>
-            <Feather name='chevron-down' size={26} color='#dbdad5' />
-          </TouchableOpacity>
-        </View>
-      </View>
-    );
-  }
-  function Description({ desc }) {
-    return (
-      <View>
-        <Text style={styles.txtPgrey}>{desc}</Text>
-      </View>
-    );
-  }
-  function ShowHide({ isOpen, login, password, email }) {
-    const opacityOut = new Animated.Value(isOpen ? 0 : 1);
-    useEffect(() => {
-      Animated.timing(opacityOut, {
-        toValue: isOpen ? 1 : 0,
-        duration: 400,
-        useNativeDriver: true,
-      }).start()
-    }, [isOpen])
-    //, opacity: opacityOut
-    return (
-      <Animated.View style={isOpen ? {display: 'flex', opacity: opacityOut} : {display: 'none'}}>
-        <View style={styles.sliceWPadd}>
-          <Feather name='user' size={26} color='#dbdad5' />
-          <Text style={[styles.txtMnormal, {paddingHorizontal: 10, maxWidth: 250}]}>{login}</Text>
-        </View>
-        <View style={styles.sliceWPadd}>
-          <Feather name='key' size={26} color='#dbdad5' />
-          <Text style={[styles.txtMnormal, {paddingHorizontal: 10, maxWidth: 250}]}>{password}</Text>
-        </View>
-        <View style={styles.sliceWPadd}>
-          <Feather name='mail' size={26} color='#dbdad5' />
-          <Text style={[styles.txtMnormal, {paddingHorizontal: 10, maxWidth: 250}]}>{email}</Text>
-        </View>
-      </Animated.View>
-    );
-  }
-  /* colors={['#0f021b', '#fc1e27']}
-  start={{x: 0, y: 1}}
-  end={{x: 1, y: 0}}
-  style={styles.container} */
-  return (
-    <View
-      style={styles.container}
-    >
-      <TopBar
-        title={pwd.title}
-        isOpen={opened}
-        openClose={() => set_opened(!opened)}
-        edit={gotoEdit}
-        delItem={delItem}
+    <View style={styles.sliceWPadd}>
+      <Feather name={type} size={26} color="#dbdad5" />
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          width: "90%",
+        }}
+      >
+        <TextInput
+          style={isFocused ? styles.inputFocused : styles.inputBlured}
+          height={26}
+          onChangeText={(text) => {
+            set_newValue(text);
+            setVal(text);
+          }}
+          value={newValue}
+          blurOnSubmit={true}
+          onFocus={() => set_focus(true)}
+          onBlur={() => set_focus(false)}
+          keyboardType={
+            ispwd ? "visible-password" : isemail ? "email-address" : "default"
+          }
+          placeholder={ph}
         />
-      <Description
-        desc={pwd.description}
-        />
-      <ShowHide
-        isOpen={opened}
-        login={pwd.login}
-        password={pwd.password}
-        email={pwd.email}
-        />
+      </View>
     </View>
   );
 }

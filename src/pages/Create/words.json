@@ -1,0 +1,38 @@
+{
+  "pt": {
+    "title": "Criar",
+    "ph": {
+      "title": "Título",
+      "description": "Uma descrição simples",
+      "login": "O login",
+      "password": "A senha",
+      "email": "O email vinculado"
+    },
+    "errors": {
+      "notSaved": {
+        "title": "Hey",
+        "msg": "As aterações não estão salvas, deseja salvar?",
+        "buttonY": "Salvar",
+        "buttonAny": "Apenas sair"
+      }
+    }
+  },
+  "en": {
+    "title": "Create",
+    "ph": {
+      "title": "Title",
+      "description": "A simple description",
+      "login": "Login",
+      "password": "Password",
+      "email": "Linked email"
+    },
+    "errors": {
+      "notSaved": {
+        "title": "Hey",
+        "msg": "Changes are not saved, do you want to save it?",
+        "buttonY": "Save",
+        "buttonAny": "Just exit"
+      }
+    }
+  }
+}

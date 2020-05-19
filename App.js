@@ -1,5 +1,6 @@
 // React
 import React, { useEffect, useState } from 'react';
+import { AsyncStorage } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -15,13 +16,15 @@ import Edit from './src/pages/Edit';
 import Config from './src/pages/Config';
 
 // Aplication
-import { read } from './src/utils/api';
+import { read, storageKey } from './src/utils/api';
 import initialData from './src/utils/initialData.json';
 import { StatusBar } from 'react-native';
 
 const Stack = createStackNavigator();
 
 
+
+//AsyncStorage.setItem(storageKey, '')
 export default function App() {
   StatusBar.setBarStyle('light-content')
   const [firstUse, set_firstUse] = useState();
@@ -57,7 +60,7 @@ export default function App() {
           <Stack.Screen name='Loading' component={Loading} />
         </Stack.Navigator>  
     </NavigationContainer>
-    );
+    )
 }}
 
 

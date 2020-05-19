@@ -39,7 +39,10 @@ export default function Dashboard({ navigation }) {
   function delItem(id) {
     let w = words.delItem;
     Alert.alert(w.title, w.msg, [
-      {text: w.buttonY, onPress: async () => {await delelteById(id)}},
+      {text: w.buttonY, onPress: async () => {
+        await delelteById(id)
+        loadData();
+      }},
       {text: w.buttonN},
     ]);
   }
@@ -73,7 +76,7 @@ export default function Dashboard({ navigation }) {
               pwd={item} 
               delItem={() => delItem(item.id)} 
               gotoEdit={() => navigation.navigate('Edit', {id: item.id})} />
-            );
+            )
           }}
       />
 
@@ -156,7 +159,7 @@ function Container({ pwd, delItem, gotoEdit }) {
   function Description({ desc }) {
     return (
       <View>
-        <Text style={styles.txtPgrey}>{desc}</Text>
+        <Text style={[styles.txtPgrey, {maxWidth: '100%'}]}>{desc}</Text>
       </View>
     );
   }
