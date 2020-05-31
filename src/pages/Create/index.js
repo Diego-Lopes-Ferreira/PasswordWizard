@@ -28,7 +28,6 @@ export default function Create({ navigation }) {
       password: password,
       email: email,
     };
-    console.log(data);
     await create(data);
     navigation.goBack();
   }

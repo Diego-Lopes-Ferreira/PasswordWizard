@@ -36,7 +36,6 @@ export default function App() {
       await set_firstUse(initialData.isFirstUse);
       set_loading(false);
     }
-    console.log(firstUse);
   }
   useEffect(() => {
     open();

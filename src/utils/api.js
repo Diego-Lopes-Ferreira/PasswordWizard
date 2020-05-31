@@ -48,7 +48,6 @@ async function delelteById( id ) {
   if (await checkId( id )) {
     var data = await read();
     const check = item => item.id === id;
-    //console.log(data.passwords)
     const dataIndex = data.passwords.findIndex(check);
     data.passwords.splice(dataIndex, 1);
     await AsyncStorage.setItem(storageKey, JSON.stringify(data))
