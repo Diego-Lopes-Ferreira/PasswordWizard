@@ -70,6 +70,7 @@ export default function Create({ navigation }) {
             val={title}
             setVal={set_title}
             ph={words.ph.title}
+            autocaps={true}
           />
           <BodyInput
             type="file-text"
@@ -77,6 +78,7 @@ export default function Create({ navigation }) {
             setVal={set_description}
             ph={words.ph.description}
             multiline={true}
+            autocaps={true}
           />
           <BodyInput
             type="user"
@@ -130,7 +132,7 @@ function Header({ pwd, create, go_back }) {
   );
 }
 
-function BodyInput({ setVal, isemail, ispwd, type, ph, multiline }) {
+function BodyInput({ setVal, isemail, ispwd, type, ph, multiline, autocaps }) {
   const [isFocused, set_focus] = useState(false);
   const [newValue, set_newValue] = useState("");
   return (
@@ -159,6 +161,7 @@ function BodyInput({ setVal, isemail, ispwd, type, ph, multiline }) {
           }
           placeholder={ph}
           multiline={multiline}
+          autoCapitalize={autocaps ? 'sentences' : 'none'}
         />
       </View>
     </View>

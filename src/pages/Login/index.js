@@ -44,6 +44,7 @@ export default function Login({ navigation }) {
 
   return (
     <View style={styles.screen} >
+      <Text style={[styles.txtG, {textAlign: 'center', paddingHorizontal: 10, paddingBottom: 50}]}>{words.greeting}</Text>
       <TextInput
         style={focused ? styles.inputFocused : styles.inputBlured}
         value={password}

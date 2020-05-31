@@ -80,7 +80,7 @@ export default function Edit({ navigation, route }) {
             val={title}
             setVal={set_title}
             ph={words.ph.title}
-            
+            autocaps={true}
           />
           <BodyInput
             type="file-text"
@@ -88,6 +88,7 @@ export default function Edit({ navigation, route }) {
             setVal={set_description}
             ph={words.ph.description}
             multiline={true}
+            autocaps={true}
           />
           <BodyInput
             type="user"
@@ -141,7 +142,7 @@ function Header({ pwd, save, go_back }) {
   );
 }
 
-function BodyInput({ setVal, isemail, ispwd, type, ph, val, multiline }) {
+function BodyInput({ setVal, isemail, ispwd, type, ph, val, multiline, autocaps }) {
   const [isFocused, set_focus] = useState(false);
   const [newValue, set_newValue] = useState("");
   useEffect(() => {set_newValue(val)}, [val])
@@ -171,6 +172,7 @@ function BodyInput({ setVal, isemail, ispwd, type, ph, val, multiline }) {
           }
           placeholder={ph}
           multiline={multiline}
+          autoCapitalize={autocaps ? 'sentences' : 'none'}
         />
       </View>
     </View>

@@ -2,6 +2,7 @@
   "pt": {
     "title": "Portugues",
     "submit": "Entrar",
+    "greeting": "Suas senhas estão salvas aqui dentro",
     "error": {
       "alert": {
         "title": "Ops",
@@ -13,6 +14,7 @@
   "en": {
     "title": "Ingles",
     "submit": "Enter",
+    "greeting": "Your passwords are safe here",
     "error": {
       "alert": {
         "title": "Ops",
