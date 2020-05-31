@@ -1,5 +1,5 @@
 import { AsyncStorage } from 'react-native';
-const storageKey = '@diego:data'
+const storageKey = '@passwordwizard:data'
 
 async function read() {
   const storageData = await AsyncStorage.getItem(storageKey);

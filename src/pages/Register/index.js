@@ -73,9 +73,7 @@ export default function Login({ navigation }) {
           <TouchableOpacity style={styles.submit} onPress={register} >
             <Text style={styles.txtG}>{words.texts.button}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.submit} onPress={() => console.log(name.length, password.length)} >
-            <Text style={styles.txtG}>Testar</Text>
-          </TouchableOpacity>
+          
       </View>
     </View>
   );

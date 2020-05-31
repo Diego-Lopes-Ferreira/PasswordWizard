@@ -1,6 +1,5 @@
 // React
 import React, { useEffect, useState } from 'react';
-import { AsyncStorage } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -26,6 +25,7 @@ export default function App() {
   StatusBar.setBarStyle('light-content')
   const [firstUse, set_firstUse] = useState();
   const [loading, set_loading] = useState(true);
+
   
   async function open() {
     try {
@@ -59,10 +59,3 @@ export default function App() {
     )
 }}
 
-
-function Root() {
-  return (
-    <Stack.Navigator initialRouteName='Dashboard' headerMode='none' >
-    </Stack.Navigator>
-  );
-}
