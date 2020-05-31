@@ -76,6 +76,7 @@ export default function Create({ navigation }) {
             val={description}
             setVal={set_description}
             ph={words.ph.description}
+            multiline={true}
           />
           <BodyInput
             type="user"
@@ -129,7 +130,7 @@ function Header({ pwd, create, go_back }) {
   );
 }
 
-function BodyInput({ setVal, isemail, ispwd, type, ph }) {
+function BodyInput({ setVal, isemail, ispwd, type, ph, multiline }) {
   const [isFocused, set_focus] = useState(false);
   const [newValue, set_newValue] = useState("");
   return (
@@ -144,7 +145,7 @@ function BodyInput({ setVal, isemail, ispwd, type, ph }) {
       >
         <TextInput
           style={isFocused ? styles.inputFocused : styles.inputBlured}
-          height={26}
+          height={multiline ? 52 : 26}
           onChangeText={(text) => {
             set_newValue(text);
             setVal(text);
@@ -157,6 +158,7 @@ function BodyInput({ setVal, isemail, ispwd, type, ph }) {
             ispwd ? "visible-password" : isemail ? "email-address" : "default"
           }
           placeholder={ph}
+          multiline={multiline}
         />
       </View>
     </View>

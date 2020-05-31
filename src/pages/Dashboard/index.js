@@ -75,7 +75,7 @@ export default function Dashboard({ navigation }) {
             <Container 
               pwd={item} 
               delItem={() => delItem(item.id)} 
-              gotoEdit={() => navigation.navigate('Edit', {id: item.id})} />
+              gotoEdit={() => navigation.navigate('Edit', {pwd: item})} />
             )
           }}
       />
