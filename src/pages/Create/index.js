@@ -134,6 +134,7 @@ function Header({ pwd, create, go_back }) {
 function BodyInput({ setVal, isemail, ispwd, type, ph, multiline, autocaps }) {
   const [isFocused, set_focus] = useState(false);
   const [newValue, set_newValue] = useState("");
+  
   return (
     <View style={styles.sliceWPadd}>
       <Feather name={type} size={26} color="#dbdad5" />
