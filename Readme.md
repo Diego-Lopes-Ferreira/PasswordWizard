@@ -16,10 +16,10 @@ Android:
 
 ## Usage example
 ### See all your passwords in a simple UI
-![Dashboard example](./pictures/dashboard-example.jpeg)
+![Dashboard example](./pictures/dashboard-example.png)
 
 ### Click on the + button and start saving your passwords
-![Create example](./pictures/create-example.jpeg)
+![Create example](./pictures/create-example.png)
 
 ---
 
