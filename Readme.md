@@ -19,7 +19,7 @@ Android:
 ![Dashboard example](./pictures/dashboard-example.jpeg)
 
 ### Click on the + button and start saving your passwords
-![Create example](./pictures/Create-example.jpeg)
+![Create example](./pictures/create-example.jpeg)
 
 ---
 
