@@ -75,7 +75,7 @@ export default function Config({ navigation }) {
           let w = words.errors.saved.alert;
           let msg = w.msg + data.user.password;
           Alert.alert(w.title, msg, [{text: w.button}]);
-          navigation.goBack();
+          
         }},
         {text: w.buttonY, onPress: () => navigation.goBack()},
         {text: w.buttonN}

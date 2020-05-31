@@ -22,9 +22,6 @@ import { StatusBar } from 'react-native';
 
 const Stack = createStackNavigator();
 
-
-
-//AsyncStorage.setItem(storageKey, '')
 export default function App() {
   StatusBar.setBarStyle('light-content')
   const [firstUse, set_firstUse] = useState();

@@ -159,7 +159,7 @@ function Container({ pwd, delItem, gotoEdit }) {
   function Description({ desc }) {
     return (
       <View>
-        <Text style={[styles.txtPgrey, {maxWidth: '100%'}]}>{desc}</Text>
+        <Text style={[styles.txtPgrey, {maxWidth: '100%'}]}>{desc == '' ? ' - ' : desc}</Text>
       </View>
     );
   }
@@ -185,20 +185,15 @@ function Container({ pwd, delItem, gotoEdit }) {
         </View>
         <View style={styles.sliceWPadd}>
           <Feather name='mail' size={26} color='#dbdad5' />
-          <Text style={[styles.txtMnormal, {paddingHorizontal: 10, maxWidth: 250}]}>{email}</Text>
+          <Text style={[styles.txtMnormal, {paddingHorizontal: 10, maxWidth: 250}]}>{email == '' ? ' - ' : email}</Text>
         </View>
       </Animated.View>
     );
   }
-  /* colors={['#0f021b', '#fc1e27']}
-  start={{x: 0, y: 1}}
-  end={{x: 1, y: 0}}
-  style={styles.container} */
   return (
     <View
       style={styles.container}
     >
-
       <TopBar
         title={pwd.title}
         isOpen={opened}
